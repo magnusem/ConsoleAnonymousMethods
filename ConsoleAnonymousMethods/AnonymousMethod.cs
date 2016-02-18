@@ -35,8 +35,16 @@ namespace ConsoleAnonymousMethods
 
             //Her skal du selv kode dine egne anonyme metoder
 
+            //opgave 1: 
+            // Test dine kald til metoder og delegates vha. Console.Writeline
+            //-kod en delegate som kan pege på metoden "gtrThan100" :   private static bool gtrThan100(int x) 
+            //-brug denne delegate og få den til at pege på metoden gtrThan100
+            //-brug delegaten til at kode en anonym metode som gør det samme som metoden gtrThan100
+            //-brug delegaten til at kode et lambda expression som gør det samme som  gtrThan100
 
 
+            //Opgave2:
+            //gør det samme som ovenstående opgave , nu bare med metoden "gange":  private static int gange(int x, int y)
 
         }
 
