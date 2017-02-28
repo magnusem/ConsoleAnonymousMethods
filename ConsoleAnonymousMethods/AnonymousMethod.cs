@@ -15,32 +15,43 @@ namespace ConsoleAnonymousMethods
         static void Main(string[] args)
         {
 
-            //kalder metoden kvadrat med 2 
-            Console.WriteLine("Kvadrat : " + kvadrat(2) );
+            //kalder metoden kvadrat med værdien 2 (OBS: se metoden kvadrat længere nede i koden)
+            Console.WriteLine($"Kvadrat : {kvadrat(2)}");
 
             //delegaten delKvadrat peger på metoden kvadrat 
             delInt1par delKvadrat = kvadrat;
 
+            //kalder metoden kvadrat gennem delegaten delKvadrat
+            Console.WriteLine($"delKvadrat : {delKvadrat(2)}"); 
+
             //anonym metode som gør det samme som kvadrat metoden 
+            //og som tildeles delegaten delKvadratAnonym
             delInt1par delKvadratAnonym = delegate(int x)
             {
                 return x*x;
             };
-
             Console.WriteLine("delkvadrat : " + delKvadratAnonym (2));
 
+            //anonym metode skrevet via Lamda syntax og som tildeles delegaten
+            //delKvadratLamda
             delInt1par delKvadratLamda = x => x*x;
+            Console.WriteLine($"delKvadrat lamda : {delKvadratLamda(2)}" );
 
-            Console.WriteLine("delKvadrat lamda : " + delKvadratLamda(12) );
+            //Istedet for at bruge min egen delegate delInt1par kan jeg bruge
+            //en forud defineret delegate Func, så derfor skal jeg bruge den.
+            Func<int, int> funcDelegate = x => x * x;
+            Console.WriteLine($"funcDelegate: {funcDelegate(2)}");
 
-            //Her skal du selv kode dine egne anonyme metoder
 
-            //opgave 1: 
+            //Her skal du selv arbejde med delegates, anonyme metoder og Lamda udtryk
+
+            //Opgave 1: 
             // Test dine kald til metoder og delegates vha. Console.Writeline
             //-kod en delegate som kan pege på metoden "gtrThan100" :   private static bool gtrThan100(int x) 
             //-brug denne delegate og få den til at pege på metoden gtrThan100
             //-brug delegaten til at kode en anonym metode som gør det samme som metoden gtrThan100
             //-brug delegaten til at kode et lambda expression som gør det samme som  gtrThan100
+            //-hvilken predefineret delagate kan du bruge istedet for din egen delegate -prøv at bruge den med et Lamda expression
 
 
             //Opgave2:
