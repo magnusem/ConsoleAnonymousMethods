@@ -12,6 +12,8 @@ namespace ConsoleAnonymousMethods
 
     class AnonymousMethod
     {
+        delegate bool delbool(int x);
+        delegate int delgange(int x, int y);
         static void Main(string[] args)
         {
 
@@ -53,9 +55,75 @@ namespace ConsoleAnonymousMethods
             //-brug delegaten til at kode et lambda expression som gør det samme som  gtrThan100
             //-hvilken predefineret delagate kan du bruge istedet for din egen delegate -prøv at bruge den med et Lamda expression
 
+            delbool delGtrTHan100 = gtrThan100;
+            Console.WriteLine($"delbool: {delGtrTHan100(101)}");
+
+
+
+
+
+
+
+            delbool delBoolAnonym = delegate (int x)
+            {
+                return x > 100;
+            };
+            Console.WriteLine("DelBoolAnonym: " + delBoolAnonym(99));
+
+
+
+
+
+
+            delbool delBoolLambda = x => x > 100;
+            Console.WriteLine($"delBool Lambda : {delBoolLambda(101)}");
+
+
+
+
+
+
+
+            Func<int, bool> funcDelegateBool = x => x > 100;
+            Console.WriteLine($"FuncDelegateBool : {funcDelegateBool(101)}");
+
+
+
+
+
 
             //Opgave2:
             //gør det samme som ovenstående opgave , nu bare med metoden "gange":  private static int gange(int x, int y)
+
+
+
+
+
+
+            delgange delGange = gange;
+            Console.WriteLine($"delgange: {gange(11, 11)}");
+
+
+
+
+
+
+            delgange delgangeAnonym = delegate (int x, int y)
+            {
+                return x * y;
+            };
+            Console.WriteLine($"delgangeanonym: " + delgangeAnonym(11, 11));
+
+
+
+
+
+
+            delgange delGangeLambda = (x, y) => x + y;
+            Console.WriteLine($"Delgange lambda: {delGangeLambda(11, 11)})");
+
+
+
 
         }
 
